@@ -1,0 +1,44 @@
+<!-- src/app/app.component.html -->
+<div class="container py-4" [class.bg-dark]="darkMode" [class.text-white]="darkMode">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1>
+        <i class="bi bi-cloud-sun"></i> App del Clima
+      </h1>
+      <button class="btn" (click)="toggleDarkMode()">
+        <i [class]="darkMode ? 'bi bi-sun' : 'bi bi-moon'"></i>
+      </button>
+    </div>
+  
+    <div class="search-box mb-4">
+      <div class="input-group">
+        <input 
+          type="text" 
+          class="form-control" 
+          [(ngModel)]="city"
+          placeholder="Buscar ciudad..."
+          (keyup.enter)="search()"
+        >
+        <button class="btn btn-primary" (click)="search()">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="btn btn-info ms-2" (click)="getLocation()" title="Usar mi ubicación">
+          <i class="bi bi-geo-alt"></i>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Current Weather -->
+    <div *ngIf="currentWeather" class="weather-card">
+      <!-- Detalles del clima actual -->
+    </div>
+  
+    <!-- 5-Day Forecast -->
+    <div *ngIf="forecast" class="forecast-container">
+      <!-- Pronóstico por días -->
+    </div>
+    <div *ngFor="let day of forecast" class="forecast-day">
+        <h5>{{ day.date }}</h5>
+        <img [src]="'https://openweathermap.org/img/wn/' + day.icon + '.png'">
+        <p>{{ day.temp | number:'1.0-0' }}°C</p>
+      </div>
+  </div>

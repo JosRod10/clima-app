@@ -1,4 +1,9 @@
-# ClimaApp
+# App del Clima
+
+Una app para ver el pronostico del clima de cualquier ciudad realizada con ANGULAR 19 consumiendo la API de OPENWEATHERMAP.
+
+![Interfaz](src/app/assets/cli_light.png)
+![Interfaz](src/app/assets/cli_dark.png)
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 

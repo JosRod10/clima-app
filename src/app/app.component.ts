@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ClimaComponent } from './componentes/clima/clima.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [ClimaComponent],
+  template: '<app-clima></app-clima>'
 })
-export class AppComponent {
-  title = 'clima-app';
-}
+export class AppComponent {}
